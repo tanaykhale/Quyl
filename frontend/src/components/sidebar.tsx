@@ -6,7 +6,8 @@ import Settings from "../assets/settings.png";
 import Chapter from "../assets/chapter.png";
 import Help from "../assets/help.png";
 
-import { Outlet } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
+import Home from "./Home";
 const Sidebar = () => {
   return (
     <div className="flex h-screen">
@@ -16,57 +17,51 @@ const Sidebar = () => {
           <img src={Logo} alt="logo" />
         </div>
         <nav className="flex-1 p-4 space-y-2">
-          <a
-            href="#"
+          <Link
+            to="/"
             className="flex items-center h-12 w-56 px-4 rounded hover:bg-gray-300"
           >
             <img src={Dashboard} alt="dashboard" className="h-6 w-6 mr-4" />
             Dashboard
-          </a>
-          <a
-            href="/student"
+          </Link>
+          <Link
+            to="/students"
             className="flex items-center h-12 w-56 px-4 rounded hover:bg-gray-300"
           >
             <img src={Students} alt="students" className="h-6 w-6 mr-4" />
             Students
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/chapter"
             className="flex items-center h-12 w-56 px-4 rounded hover:bg-gray-300"
           >
             <img src={Chapter} alt="chapter" className="h-6 w-6 mr-4" />
             Chapter
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/help"
             className="flex items-center h-12 w-56 px-4 rounded hover:bg-gray-300"
           >
             <img src={Help} alt="help" className="h-6 w-6 mr-4" />
             Help
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/reports"
             className="flex items-center h-12 w-56 px-4 rounded hover:bg-gray-300"
           >
             <img src={Report} alt="reports" className="h-6 w-6 mr-4" />
             Reports
-          </a>
-          <a
-            href="#"
+          </Link>
+          <Link
+            to="/settings"
             className="flex items-center h-12 w-56 px-4 rounded hover:bg-gray-300"
           >
             <img src={Settings} alt="settings" className="h-6 w-6 mr-4" />
             Settings
-          </a>
+          </Link>
         </nav>
       </div>
-
-      {/* Main Content */}
-      {/* <div className="flex-1 p-6 bg-gray-100">
-        <Home></Home>
-        <h1 className="text-3xl font-bold">Main Content</h1>
-      </div> */}
-      <Outlet></Outlet>
+      <Home></Home>
     </div>
   );
 };
